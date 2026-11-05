@@ -1,18 +1,87 @@
 <!doctype html>
 <html lang="en-GB">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Coccinelle | Staff Supervision</title>
-<style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:25px;background:#f7f7f7;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#292929}
-main{width:100%;max-width:430px;text-align:center}header{margin-bottom:30px}header img{display:block;width:191px;max-width:76%;height:auto;margin:0 auto 12px}h1{font-size:25px;letter-spacing:-.025em;font-weight:650;margin:0}
-a.card{display:block;text-decoration:none;color:#292929;background:#fff;border:1px solid #e3e3e3;border-radius:13px;padding:26px 22px;margin-top:13px;transition:border-color .15s}
-a.card:hover,a.card:focus-visible{border-color:#888}a.card:focus-visible{outline:2px solid #666;outline-offset:2px}
-h2{font-size:19px;font-weight:620;margin:0 0 7px}p{font-size:13px;color:#888;margin:0 0 18px}.button{display:block;background:#303030;color:#fff;padding:12px;border-radius:8px;font-size:14px;font-weight:600}
-footer{font-size:12px;color:#858585;margin-top:23px}
-</style></head>
-<body><main>
-<header><img src="coccinelle-logo.svg" alt="Coccinelle Day Nursery"><h1>Staff Supervision</h1></header>
-<a class="card" href="2m.html"><h2>Termly Supervision</h2><p>Once per term</p><span class="button">Open Form</span></a>
-<a class="card" href="coccinelle-termly-review.html"><h2>Annual Development Review</h2><p>Once a year</p><span class="button">Open Form</span></a>
-<footer>Monthly check-ins: use the private paper logbook.</footer>
-</main></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coccinelle | Staff Supervision</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f7f7f7;
+      color: #292929;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      padding: 32px 18px;
+    }
+    main { width: 100%; max-width: 820px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 28px; }
+    header img { display: block; width: 166px; max-width: 75%; height: auto; margin: 0 auto 10px; }
+    h1 { font-size: 26px; font-weight: 650; letter-spacing: -.025em; margin: 0; }
+    .layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px; align-items: start; }
+    .card { background: #fff; border: 1px solid #e3e3e3; border-radius: 13px; padding: 23px; }
+    h2 { margin: 0; font-size: 19px; line-height: 1.3; font-weight: 630; }
+    .frequency { margin: 4px 0 20px; color: #777; font-size: 13px; }
+    .label { margin: 0 0 8px; font-size: 12px; font-weight: 700; color: #555; }
+    ol { margin: 0 0 18px; padding-left: 21px; font-size: 14px; line-height: 1.6; }
+    li + li { margin-top: 4px; }
+    .instruction { background: #f4f4f4; border-radius: 8px; padding: 11px 12px; font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 16px; }
+    .examples { border-top: 1px solid #ededed; padding-top: 15px; }
+    .example { font-size: 12px; line-height: 1.55; color: #555; margin: 0; }
+    .example + .example { margin-top: 11px; }
+    .example strong { color: #333; }
+    .forms { display: grid; gap: 14px; }
+    a.form { display: block; color: inherit; text-decoration: none; }
+    a.form:hover, a.form:focus-visible { border-color: #929292; }
+    a.form:focus-visible { outline: 2px solid #555; outline-offset: 2px; }
+    .forms .frequency { margin-bottom: 18px; }
+    .button { display: block; background: #303030; color: #fff; padding: 12px; text-align: center; border-radius: 8px; font-size: 14px; font-weight: 600; }
+    @media (max-width: 650px) {
+      main { max-width: 440px; }
+      .layout { grid-template-columns: 1fr; }
+      header { margin-bottom: 22px; }
+      .card { padding: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="coccinelle-logo.svg" alt="Coccinelle Day Nursery">
+      <h1>Staff Supervision</h1>
+    </header>
+
+    <div class="layout">
+      <section class="card" aria-labelledby="checkin-title">
+        <h2 id="checkin-title">Quick Check-in</h2>
+        <p class="frequency">Monthly · 5–10 minutes</p>
+        <p class="label">Ask:</p>
+        <ol>
+          <li>How are you getting on?</li>
+          <li>Is there anything you need help with?</li>
+          <li>Is there anything you'd like to learn or improve?</li>
+        </ol>
+        <div class="instruction">Keep a brief dated note in the private logbook.</div>
+        <div class="examples">
+          <p class="label">Example logbook notes:</p>
+          <p class="example"><strong>All well:</strong> 05/11/2026 — Staff happy and settled. No concerns raised. Previous training support helpful.</p>
+          <p class="example"><strong>Support needed:</strong> 05/11/2026 — Staff tired in afternoons and would like help with children's communication strategies. Manager to review afternoon duties and share resources; follow up next check-in.</p>
+        </div>
+      </section>
+
+      <div class="forms">
+        <a class="card form" href="2m.html">
+          <h2>Termly Supervision</h2>
+          <p class="frequency">Once per term</p>
+          <span class="button">Open Form</span>
+        </a>
+        <a class="card form" href="coccinelle-termly-review.html">
+          <h2>Annual Development Review</h2>
+          <p class="frequency">Once a year</p>
+          <span class="button">Open Form</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
