@@ -1,107 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Coccinelle Day Nursery | Termly Staff Development Review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coccinelle Day Nursery | Annual Development Review</title>
 <style>
-:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#242424;background:#f7f7f7}
-*{box-sizing:border-box}body{margin:0}.shell{max-width:850px;margin:32px auto;padding:0 18px 46px}
-.mast{background:white;border:1px solid #e2e2e2;border-bottom:0;border-radius:14px 14px 0 0;padding:26px 30px 20px;display:flex;align-items:center;gap:23px}
-.mast img{width:134px;max-height:76px;object-fit:contain;object-position:left center;flex:none}
-.mast h1{font-size:25px;line-height:1.2;font-weight:650;letter-spacing:-.025em;margin:0 0 5px;color:#252525}.mast p{margin:0;color:#747474;font-size:13px}.eyebrow{display:none}
-.panel{background:#fff;padding:20px 30px 28px;border:1px solid #e2e2e2;border-top:0}
-.section{border-top:1px solid #e6e6e6;padding:23px 0 4px}.section h2{font-size:17px;margin:0 0 12px;color:#252525;letter-spacing:-.01em}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}
-label,.question-title{font-weight:550;font-size:13px;color:#373737}
-input[type=text],input[type=date],textarea,select{width:100%;padding:10px 11px;border:1px solid #d2d2d2;border-radius:8px;font:inherit;font-size:14px;color:#252525;background:#fff}
-input:focus,textarea:focus,select:focus{outline:2px solid #858585;outline-offset:1px}textarea{resize:vertical;min-height:68px}
-.question{padding:12px 0;border-top:1px solid #f0f0f0}.question:first-of-type{border-top:0}.question-title{display:block;margin-bottom:9px}
-.options{display:flex;gap:19px;flex-wrap:wrap}.options label{display:inline-flex;align-items:center;gap:6px;font-weight:400;cursor:pointer;color:#505050}.options input{accent-color:#555;width:16px;height:16px}
-.muted{color:#707070;font-size:13px}.comment{margin:12px 0 17px}.comment label{display:block;margin-bottom:6px}
-.actions{display:grid;gap:12px}.action-item{background:#fafafa;border:1px solid #e6e6e6;border-radius:9px;padding:14px}.action-item h3{margin:0 0 12px;font-size:13px}
-.action-grid{display:grid;grid-template-columns:2fr 1fr;gap:12px}.action-grid .full{grid-column:1/-1}
-.buttons{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:18px 30px;background:#fff;border:1px solid #e2e2e2;border-top:0;border-radius:0 0 14px 14px}
-button{border:1px solid #313131;padding:11px 16px;border-radius:8px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;background:#303030;color:white}button.secondary{background:#fff;color:#333;border-color:#d5d5d5}
-button:hover{opacity:.88}.notice{font-size:12px;line-height:1.5;color:#666;background:#fafafa;border:1px solid #e8e8e8;padding:11px 13px;border-radius:8px;margin:19px 0}
-.small{font-size:12px}.signatures{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:25px}.sig{padding-top:30px;border-bottom:1px solid #929292;font-size:12px}.print-only{display:none}.status{font-size:12px;color:#666;min-height:18px}
-@media(max-width:650px){.shell{margin:0;padding:0}.mast,.panel,.buttons{border-radius:0;padding:20px 18px}.mast{gap:12px}.mast img{width:95px;max-height:65px}.mast h1{font-size:20px}.grid,.action-grid,.signatures{grid-template-columns:1fr}.action-grid .full{grid-column:auto}}
-@page{size:A4;margin:12mm}
-@media print{body{background:white;font-size:11px}.shell{margin:0;max-width:none;padding:0}.mast{padding:10px 15px 12px;border-radius:0}.mast img{width:98px;max-height:55px}.mast h1{font-size:19px}.mast p{font-size:11px}.panel{padding:10px 15px;border:0}.section{padding:12px 0 3px;break-inside:avoid}.section h2{font-size:13px;margin-bottom:8px}.question{padding:5px 0}.question-title{font-size:10px;margin-bottom:3px}.options{gap:12px}.options label{font-size:10px}.options input{width:12px;height:12px}.grid{gap:8px}.field label,.comment label{font-size:10px}input[type=text],input[type=date],textarea,select{border:1px solid #ddd;padding:5px 7px;border-radius:3px;font-size:10px;min-height:0}textarea{min-height:34px;height:auto;resize:none}.comment{margin:7px 0}.actions{gap:6px}.action-item{padding:8px;break-inside:avoid}.action-grid{gap:7px}.action-item h3{font-size:10px}.buttons,.no-print,.notice,.status{display:none!important}.signatures{margin-top:16px}.print-only{display:block}.page-break{break-before:page}}
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; color: #292929; background: #f7f7f7; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+.page { max-width: 820px; margin: 28px auto 55px; padding: 0 17px; }
+.topline { margin-bottom: 12px; }
+.back { color: #777; font-size: 13px; text-decoration: none; }
+.back:hover { text-decoration: underline; }
+.sheet { border: 1px solid #e5e5e5; border-radius: 14px; background: #fff; overflow: hidden; }
+.heading { padding: 24px 28px 19px; border-bottom: 1px solid #ededed; display: flex; align-items: center; gap: 23px; }
+.heading img { width: 129px; height: 69px; object-fit: contain; object-position: center; flex: none; }
+.heading h1 { font-size: 24px; font-weight: 650; letter-spacing: -.025em; line-height: 1.2; margin: 0 0 5px; }
+.heading p { font-size: 12px; color: #777; margin: 0; }
+.body { padding: 24px 28px 28px; }
+.intro { color: #777; font-size: 12px; margin: 0 0 18px; line-height: 1.55; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label, .small-label { font-size: 12px; color: #535353; font-weight: 600; }
+input[type=text], input[type=date], select, textarea { width: 100%; border: 1px solid #dcdcdc; border-radius: 7px; background: #fff; color: #292929; padding: 10px 11px; font: inherit; font-size: 13px; }
+input:focus-visible, textarea:focus-visible { outline: 2px solid #777; outline-offset: 1px; }
+textarea { min-height: 64px; resize: vertical; line-height: 1.5; }
+section { padding: 20px 0 0; margin-top: 20px; border-top: 1px solid #e9e9e9; }
+section h2 { font-size: 16px; font-weight: 650; margin: 0 0 12px; letter-spacing: -.01em; }
+.q { padding: 7px 0 11px; display: flex; gap: 14px; justify-content: space-between; align-items: center; }
+.q + .q { border-top: 1px solid #f4f4f4; }
+.qtext { font-size: 13px; line-height: 1.45; max-width: 480px; }
+.options { display: flex; flex: none; gap: 5px; align-items: center; }
+.options label { display: inline-flex; align-items: center; justify-content: center; gap: 4px; border: 1px solid #e4e4e4; border-radius: 6px; padding: 6px 7px; font-size: 12px; color: #555; cursor: pointer; white-space: nowrap; }
+.options label:has(input:checked) { background: #f1f1f1; border-color: #919191; color: #222; }
+.options input { accent-color: #545454; width: 13px; height: 13px; margin: 0; }
+.note { margin: 10px 0 0; }
+.note label { display: block; color: #626262; font-size: 12px; margin-bottom: 6px; }
+.note textarea { width: 100%; }
+.mini { color: #8a8a8a; font-size: 12px; line-height: 1.5; }
+.actions { display: grid; gap: 13px; }
+.action { padding: 15px; border: 1px solid #e9e9e9; border-radius: 9px; background: #fcfcfc; }
+.action h3 { margin: 0 0 11px; font-size: 13px; }
+.action .grid { gap: 10px; }
+.action .span { grid-column: 1/-1; }
+.signatures { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin: 22px 0 4px; }
+.signatures div { padding-top: 18px; border-top: 1px solid #bcbcbc; font-size: 11px; color: #666; }
+.privacy { color: #777; font-size: 11px; line-height: 1.5; margin: 19px 0 0; }
+.footer { display: flex; gap: 9px; align-items: center; justify-content: flex-start; flex-wrap: wrap; padding: 15px 0; }
+button { border: 1px solid #333; border-radius: 8px; background: #333; color: #fff; padding: 11px 17px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+button.secondary { background: #fff; color: #444; border-color: #d5d5d5; }
+button:hover { opacity: .87; }
+.status { font-size: 12px; color: #777; }
+#printSheet { display: none; }
+@media(max-width:650px) {
+ .page { margin: 0; padding: 0 0 30px; }
+ .topline { padding: 16px; margin: 0; }
+ .sheet { border-left: 0; border-right: 0; border-radius: 0; }
+ .heading { padding: 20px 16px; gap: 15px; }
+ .heading img { width: 96px; height: 59px; }
+ .heading h1 { font-size: 20px; }
+ .body { padding: 16px; }
+ .grid, .signatures { grid-template-columns: 1fr; }
+ .action .span { grid-column: auto; }
+ .q { display: block; }
+ .qtext { margin-bottom: 8px; }
+ .footer { padding: 15px 16px; }
+}
+@page { size: A4; margin: 15mm; }
+@media print {
+ :root { background: white; }
+ body { background: #fff; }
+ #screenForm, .topline, .footer { display: none !important; }
+ #printSheet { display: block; font-family: Arial,sans-serif; color: #222; font-size: 10.5px; }
+ #printSheet .phead { display: flex; align-items: center; gap: 20px; padding-bottom: 10px; border-bottom: 1px solid #bbb; }
+ #printSheet .phead img { width: 105px; height: 55px; object-fit: contain; }
+ #printSheet h1 { font-size: 19px; margin: 0 0 3px; }
+ #printSheet .pmeta { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 15px; margin: 14px 0; font-size: 11px; }
+ #printSheet .pgroup { border-top: 1px solid #ddd; padding: 10px 0 6px; break-inside: avoid; }
+ #printSheet .pgroup h2 { font-size: 12px; margin: 0 0 6px; }
+ #printSheet .pqa { display: flex; gap: 10px; justify-content: space-between; margin: 4px 0; line-height: 1.4; }
+ #printSheet .pqa b { white-space: nowrap; font-weight: 600; }
+ #printSheet .pnote { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.4; margin: 6px 0; }
+ #printSheet .psignatures { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 38px; }
+ #printSheet .psignatures div { border-top: 1px solid #aaa; font-size: 10px; padding-top: 7px; }
+}
 </style>
 </head>
 <body>
-<main class="shell">
-  <header class="mast"><img src="coccinelle-logo.svg" alt="Coccinelle Day Nursery logo"><div><h1>Termly Review</h1><p>Staff development and reflection</p></div></header>
-  <form id="form" class="panel" autocomplete="off">
-    <div class="grid">
-      <div class="field"><label for="practitioner">Practitioner *</label><input id="practitioner" name="practitioner" type="text" required></div>
-      <div class="field"><label for="supervisor">Supervisor *</label><input id="supervisor" name="supervisor" type="text" required></div>
-      <div class="field"><label for="meetingDate">Date of supervision *</label><input id="meetingDate" name="meetingDate" type="date" required></div>
-      <div class="field"><label for="term">Term *</label><select id="term" name="term" required><option value="">Select term</option><option>Autumn</option><option>Spring</option><option>Summer</option></select></div>
-      <div class="field"><label for="period">Academic year / period covered</label><input id="period" type="text" placeholder="e.g. 2026–27 / September–December"></div>
-      <div class="field"><label for="nextDate">Next supervision date</label><input id="nextDate" type="date"></div>
-    </div>
-    <div class="notice no-print">This form works entirely in your browser: it does not upload, email or auto-save responses. Save the completed PDF to authorised, restricted nursery storage. Do not put identifiable child details, safeguarding case narratives or sensitive staff disclosures in this form; use the appropriate restricted reporting systems. Urgent concerns must be acted on immediately, not deferred to supervision.</div>
-    <div id="sections"></div>
-    <section class="section"><h2>10. Next-term development targets and follow-up</h2>
-      <div class="question"><span class="question-title">Have targets and actions from the previous review been discussed?</span><div class="options" role="group" aria-label="Previous review actions"><label><input type="radio" name="previousReviewed" value="Yes"> Yes</label><label><input type="radio" name="previousReviewed" value="No"> No</label><label><input type="radio" name="previousReviewed" value="N/A"> N/A</label></div></div>
-      <div class="comment"><label for="previousComments">Impact of previous actions / unfinished items</label><textarea id="previousComments" rows="3" placeholder="What changed in practice? What needs carrying forward?"></textarea></div>
-      <div class="actions" id="actionItems"></div>
-      <div class="comment"><label for="supportRequired">Support, resources or coaching the manager will provide</label><textarea id="supportRequired" rows="2"></textarea></div>
-      <div class="comment"><label for="otherConcerns">Other matters / confidential follow-up reference (no sensitive detail)</label><textarea id="otherConcerns" rows="2"></textarea></div>
-      <div class="comment"><label for="staffComments">Practitioner's comments / reflections on this review</label><textarea id="staffComments" rows="2"></textarea></div>
-      <div class="signatures"><div class="sig">Practitioner signature / acknowledgement</div><div class="sig">Supervisor signature / acknowledgement</div></div>
-      <p class="muted small">Signatures can be added to the printed PDF, or acknowledgements captured using an approved nursery process. Acknowledgement does not necessarily mean agreement.</p>
-    </section>
-  </form>
-  <div class="buttons no-print"><button id="saveBtn" type="button">Save completed review as PDF / Print</button><button id="clearBtn" class="secondary" type="button">Clear form</button><div id="status" class="status" role="status" aria-live="polite"></div></div>
+<main class="page">
+  <div class="topline"><a class="back" href="index.html">← Staff Supervision</a></div>
+  <div id="screenForm" class="sheet">
+    <header class="heading"><img src="coccinelle-logo.svg" alt="Coccinelle Day Nursery logo"><div><h1>Annual Development Review</h1><p>Reflect on progress and agree next steps</p></div></header>
+    <form id="form" class="body" autocomplete="off">
+      <p class="intro">Manager-led conversation · Staff do not need to fill in this form.</p>
+      <div class="grid">
+        <div class="field"><label for="practitioner">Staff member *</label><input id="practitioner" type="text" required></div>
+        <div class="field"><label for="supervisor">Supervisor *</label><input id="supervisor" type="text" required></div>
+        <div class="field"><label for="meetingDate">Date *</label><input id="meetingDate" type="date" required></div>
+        <div class="field"><label for="period">Review period (optional)</label><input id="period" type="text" placeholder="e.g. November 2025–November 2026"></div>
+      </div>
+      <div id="questions"></div>
+      <section><h2>6. Actions and follow-up</h2>
+        <div class="actions"><div class="action"><h3>Development priority 1</h3>
+        <div class="grid">
+          <div class="field span"><label for="action1">What will happen?</label><input id="action1" type="text" placeholder="One clear, practical next step"></div>
+          <div class="field"><label for="owner1">Who will do it?</label><input id="owner1" type="text" placeholder="Name / role"></div>
+          <div class="field"><label for="due1">Review by</label><input id="due1" type="date"></div>
+          <div class="field span"><label for="success1">How will we know it helped? (optional)</label><input id="success1" type="text" placeholder="Simple indication of progress"></div>
+        </div></div><div class="action"><h3>Development priority 2</h3>
+        <div class="grid">
+          <div class="field span"><label for="action2">What will happen?</label><input id="action2" type="text" placeholder="One clear, practical next step"></div>
+          <div class="field"><label for="owner2">Who will do it?</label><input id="owner2" type="text" placeholder="Name / role"></div>
+          <div class="field"><label for="due2">Review by</label><input id="due2" type="date"></div>
+          <div class="field span"><label for="success2">How will we know it helped? (optional)</label><input id="success2" type="text" placeholder="Simple indication of progress"></div>
+        </div></div></div>
+        <div class="note"><label for="staffView">Staff member’s comments (optional)</label><textarea id="staffView" rows="2" placeholder="Only if they would like anything added"></textarea></div>
+        <div class="field" style="margin-top:13px;max-width:300px"><label for="nextDate">Next supervision / review date (optional)</label><input id="nextDate" type="date"></div>
+        <p class="mini">Review these actions at the next discussion.</p>
+        <div class="signatures"><div>Staff signature / acknowledgement (after printing)</div><div>Supervisor signature (after printing)</div></div>
+      </section>
+      <p class="privacy">Keep the completed PDF in restricted nursery records. The form is not saved automatically. Urgent safeguarding matters must be reported immediately through the nursery’s safeguarding procedures, not recorded here in detail.</p>
+    </form>
+  </div>
+  <div id="printSheet" aria-hidden="true"></div>
+  <div class="footer"><button type="button" id="printBtn">Save as PDF / Print</button><button type="button" id="clearBtn" class="secondary">Clear</button><span id="status" class="status" role="status" aria-live="polite"></span></div>
 </main>
 <script>
 'use strict';
-const sections=[
- {title:'1. Wellbeing and professional support',questions:['Do you feel supported and valued in your role?','Is your workload manageable?','Are there any unresolved concerns affecting your work?'],prompt:'What went well this term? What support would help next term?'},
- {title:'2. Safeguarding and child protection',questions:['Are you confident recognising and reporting safeguarding concerns?','Have any concerns or allegations needed escalation since the last review?','Are safeguarding training or procedural updates needed?','Are you clear about whistleblowing and allegations-against-staff routes?'],prompt:'Summarise any learning, support or procedural follow-up (without case details).'},
- {title:'3. Key children, progress and parent partnership',questions:['Can you describe progress and priorities for your key children?','Have any gaps or additional needs been identified and acted on?','Are parents/carers appropriately involved in supporting learning?'],prompt:'Give one anonymised example of progress or a strategy that helped.'},
- {title:'4. Quality of interactions and teaching',questions:['Are you using ShREC approaches (share attention, respond, expand, conversation) effectively?','Are you supporting sustained shared thinking and emotional wellbeing (SSTEW)?','Are you applying opportunities, recognition, interaction and modelling (ORIM)?'],prompt:'Describe one interaction that extended a child’s language, thinking or wellbeing. What will you improve?'},
- {title:'5. Curriculum and intent',questions:['Do you understand how your practice supports the nursery curriculum intent?','Are you adapting learning opportunities to children’s interests and developmental needs?','Are you promoting communication, independence and a broad learning experience?'],prompt:'What curriculum approach worked best, and why?'},
- {title:'6. Inclusion and SEND',questions:['Have concerns about developmental needs been recognised and shared appropriately?','Are agreed support plans, referrals and strategies being followed where relevant?','Are families appropriately involved in support decisions?'],prompt:'What inclusive strategy worked well? What additional support is required?'},
- {title:'7. Health, safety and welfare',questions:['Are you confident following safety, hygiene, medication and incident procedures?','Have relevant risks, near misses or environmental issues been escalated?','Are safer sleeping procedures followed where relevant?'],prompt:'Any health, safety or welfare improvements needed?'},
- {title:'8. Training and professional development',questions:['Have you completed relevant training or CPD this term?','Can you explain how learning has changed your practice?','Are there skills, qualifications or training you would like to develop next term?'],prompt:'What learning has had the most impact? What CPD or coaching is needed?'},
- {title:'9. Overall reflection and next-term priorities',questions:['Do you understand the main strengths highlighted in this review?','Have you and your supervisor identified clear development priorities?'],prompt:'Record one key strength and one priority for next term.'}
-];
-const container=document.getElementById('sections');
+const pageTitle="Annual Development Review";
+const sections=[{"title": "1. Wellbeing and support", "qs": ["Do you feel supported and valued in your role?", "Are there any workload or wellbeing concerns to address?"], "note": "What has gone well this year? What would make your role easier?"}, {"title": "2. Safeguarding and welfare", "qs": ["Are you confident about safeguarding and reporting procedures?", "Are any training updates or welfare follow-ups needed?"], "note": "Support or action needed (no confidential case details)."}, {"title": "3. Children, inclusion and families", "qs": ["Can you identify children’s progress and any additional support needs?", "Are SEND strategies and parent partnerships working effectively?"], "note": "One anonymised example of a strategy that helped."}, {"title": "4. Curriculum and teaching", "qs": ["Do you feel confident delivering the nursery curriculum?", "Are you using positive interaction and communication strategies?"], "note": "One example of good practice or coaching focus (e.g. ShREC, SSTEW or ORIM)."}, {"title": "5. Learning and next steps", "qs": ["Have you received useful training or coaching this year?", "Have previous development actions been reviewed?", "Have you identified an area you would like to develop next?"], "note": "What did you learn? What support or training should follow?"}];
+const countActions=2;
+const $=(id)=>document.getElementById(id);
+const escapeHtml=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const value=(id)=>$(id)?.value.trim()||'';
+const display=(s)=>s ? escapeHtml(s) : '—';
+const prettyDate=(raw)=>{if(!raw)return '—'; const p=raw.split('-');return p.length===3?`${p[2]}/${p[1]}/${p[0]}`:escapeHtml(raw);};
+const container=$('questions');
 sections.forEach((section,s)=>{
- const el=document.createElement('section');el.className='section';
- const title=document.createElement('h2');title.textContent=section.title;el.append(title);
- section.questions.forEach((question,i)=>{
-  const q=document.createElement('div');q.className='question';
-  const questionTitle=document.createElement('span');questionTitle.className='question-title';questionTitle.textContent=question;q.append(questionTitle);
-  const opts=document.createElement('div');opts.className='options';opts.setAttribute('role','group');opts.setAttribute('aria-label',question);
-  ['Yes','No','N/A'].forEach(value=>{const label=document.createElement('label');const input=document.createElement('input');input.type='radio';input.name=`q${s}_${i}`;input.value=value;label.append(input,document.createTextNode(' '+value));opts.append(label)});
-  q.append(opts);el.append(q);
+ const el=document.createElement('section');
+ const heading=document.createElement('h2');heading.textContent=section.title;el.append(heading);
+ section.qs.forEach((question,i)=>{
+  const q=document.createElement('div');q.className='q';
+  const text=document.createElement('span');text.className='qtext';text.textContent=question;q.append(text);
+  const choices=document.createElement('div');choices.className='options';choices.setAttribute('role','group');choices.setAttribute('aria-label',question);
+  for(const answer of ['Yes','No','N/A']){
+   const label=document.createElement('label'); const radio=document.createElement('input');radio.type='radio';radio.name=`q${s}_${i}`;radio.value=answer;
+   label.append(radio,document.createTextNode(answer));choices.append(label);
+  }
+  q.append(choices);el.append(q);
  });
- const comment=document.createElement('div');comment.className='comment';const label=document.createElement('label');label.htmlFor=`comment${s}`;label.textContent=section.prompt;const textarea=document.createElement('textarea');textarea.id=`comment${s}`;textarea.rows=2;comment.append(label,textarea);el.append(comment);container.append(el);
+ const note=document.createElement('div');note.className='note';
+ const label=document.createElement('label');label.htmlFor=`note${s}`;label.textContent=section.note;
+ const ta=document.createElement('textarea');ta.id=`note${s}`;ta.rows=2;ta.placeholder='Brief note, only if needed';note.append(label,ta);el.append(note);container.append(el);
 });
-const actionItems=document.getElementById('actionItems');
-for(let i=1;i<=3;i++){
- const row=document.createElement('div');row.className='action-item';
- row.innerHTML=`<h3>Development target ${i}</h3><div class="action-grid"><div class="field full"><label for="action${i}">Action / target</label><textarea id="action${i}" rows="2"></textarea></div><div class="field"><label for="owner${i}">Responsible person</label><input id="owner${i}" type="text"></div><div class="field"><label for="due${i}">Due date</label><input id="due${i}" type="date"></div><div class="field full"><label for="success${i}">How will success be demonstrated?</label><input id="success${i}" type="text"></div></div>`;
- actionItems.append(row);
+(function setDate(){const now=new Date();$('meetingDate').value=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;})();
+function buildPrint(){
+ let out=`<header class="phead"><img src="coccinelle-logo.svg" alt=""><div><h1>${escapeHtml(pageTitle)}</h1><div>Coccinelle Day Nursery</div></div></header>`;
+ out+=`<div class="pmeta"><div><b>Staff member:</b> ${display(value('practitioner'))}</div><div><b>Supervisor:</b> ${display(value('supervisor'))}</div><div><b>Date:</b> ${prettyDate(value('meetingDate'))}</div><div><b>Period:</b> ${display(value('period'))}</div></div>`;
+ sections.forEach((sec,s)=>{
+  out+=`<div class="pgroup"><h2>${escapeHtml(sec.title)}</h2>`;
+  sec.qs.forEach((question,i)=>{const selected=document.querySelector(`input[name="q${s}_${i}"]:checked`);out+=`<div class="pqa"><span>${escapeHtml(question)}</span><b>${selected?escapeHtml(selected.value):'Not recorded'}</b></div>`;});
+  const note=value(`note${s}`);if(note)out+=`<p class="pnote"><b>Discussion:</b> ${escapeHtml(note)}</p>`;
+  out+='</div>';
+ });
+ out+='<div class="pgroup"><h2>Actions and follow-up</h2>';
+ for(let i=1;i<=countActions;i++){
+   const act=value(`action${i}`),owner=value(`owner${i}`),due=value(`due${i}`),success=value(`success${i}`);
+   if(act||owner||due||success){out+=`<p class="pnote"><b>Action ${i}:</b> ${display(act)}<br><b>Owner:</b> ${display(owner)} · <b>Review by:</b> ${prettyDate(due)}${success?'<br><b>Success measure:</b> '+escapeHtml(success):''}</p>`;}
+ }
+ if(!Array.from({length:countActions},(_,j)=>value(`action${j+1}`)).some(Boolean))out+='<p class="pnote">No action recorded.</p>';
+ if(value('staffView'))out+=`<p class="pnote"><b>Staff member’s comments:</b> ${escapeHtml(value('staffView'))}</p>`;
+ out+=`<p><b>Next supervision/review:</b> ${prettyDate(value('nextDate'))}</p></div>`;
+ out+='<div class="psignatures"><div>Staff signature / acknowledgement and date</div><div>Supervisor signature and date</div></div>';
+ $('printSheet').innerHTML=out;
 }
-document.getElementById('saveBtn').addEventListener('click',()=>{
- const form=document.getElementById('form');const status=document.getElementById('status');
- if(!form.reportValidity()){status.textContent='Please complete practitioner, supervisor, review date and term.';return}
- const missing=[];sections.forEach((sec,s)=>sec.questions.forEach((q,i)=>{if(!document.querySelector(`input[name="q${s}_${i}"]:checked`))missing.push(q)}));
- if(!document.querySelector('input[name="previousReviewed"]:checked'))missing.push('Previous actions reviewed');
- if(missing.length && !confirm(`${missing.length} review answer(s) are blank. Continue to PDF/print anyway?`)){status.textContent='Complete unanswered items or continue when ready.';return}
- status.textContent='In the print window, choose “Save as PDF” as the destination.';
- document.querySelectorAll('textarea').forEach(t=>{t.style.height='auto';t.style.height=Math.max(t.scrollHeight,60)+'px'}); window.print();
+$('printBtn').addEventListener('click',()=>{
+ if(!$('form').reportValidity()){$('status').textContent='Please complete staff member, supervisor and date.';return;}
+ $('status').textContent='Choose “Save as PDF” in the print window.';
+ buildPrint();
+ window.print();
 });
-document.getElementById('clearBtn').addEventListener('click',()=>{
- if(!confirm('Clear all entries? Any unsaved answers will be lost.'))return;
- document.getElementById('form').reset();document.getElementById('status').textContent='Form cleared.';
-});
+$('clearBtn').addEventListener('click',()=>{if(confirm('Clear all answers on this form?')){$('form').reset();$('status').textContent='Form cleared.';}});
+window.addEventListener('beforeprint',buildPrint);
 </script>
-</body>
-</html>
+</body></html>
