@@ -1,1 +1,73 @@
-
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coccinelle Day Nursery | Staff Supervision</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#20332e;background:#f4f7f5}*{box-sizing:border-box}body{margin:0}.shell{max-width:880px;margin:38px auto;padding:0 18px 50px}.mast{background:#163d35;color:#fff;padding:27px 30px;border-radius:16px 16px 0 0}.eyebrow{font-size:12px;letter-spacing:.14em;font-weight:700;text-transform:uppercase;color:#b9dbcc}.mast h1{font-size:29px;margin:9px 0 5px}.mast p{margin:0;color:#e0ece6;font-size:14px}.panel{background:#fff;padding:26px 30px;border:1px solid #dce8e0;border-top:0}.section{border-top:1px solid #dce8e0;padding:25px 0 5px}.section h2{font-size:19px;margin:0 0 15px;color:#18473b}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field{display:flex;flex-direction:column;gap:6px}label,.question-title{font-weight:600;font-size:14px}input[type=text],input[type=date],textarea,select{width:100%;padding:11px 12px;border:1px solid #aebfb5;border-radius:8px;font:inherit;font-size:14px;color:#20332e;background:#fff}input:focus,textarea:focus,select:focus{outline:2px solid #528975;outline-offset:1px}textarea{resize:vertical;min-height:76px}.question{padding:13px 0;border-top:1px solid #edf2ee}.question:first-of-type{border-top:0}.question-title{display:block;margin-bottom:8px}.options{display:flex;gap:18px;flex-wrap:wrap}.options label{display:inline-flex;align-items:center;gap:6px;font-weight:400;cursor:pointer}.options input{accent-color:#205a48;width:16px;height:16px}.muted{color:#5b6d63;font-size:13px}.comment{margin:15px 0 18px}.comment label{display:block;margin-bottom:6px}.actions{display:grid;gap:14px}.action-item{background:#f7faf8;border:1px solid #e0eae3;border-radius:10px;padding:14px}.action-item h3{margin:0 0 12px;font-size:14px}.action-grid{display:grid;grid-template-columns:2fr 1fr;gap:12px}.action-grid .full{grid-column:1/-1}.buttons{display:flex;gap:10px;flex-wrap:wrap;padding:20px 30px;background:#fff;border:1px solid #dce8e0;border-top:0;border-radius:0 0 16px 16px}button{border:1px solid #1e5b49;padding:12px 18px;border-radius:9px;font:inherit;font-weight:650;cursor:pointer;background:#205a48;color:#fff}button.secondary{background:#fff;color:#205a48}.notice{font-size:13px;color:#465a50;background:#eaf2ed;border-left:4px solid #43836c;padding:12px 14px;border-radius:6px;margin:19px 0}.small{font-size:13px}.signatures{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:25px}.sig{padding-top:30px;border-bottom:1px solid #52665b;font-size:13px}.print-only{display:none}.status{font-size:13px;color:#7c342e;min-height:18px}#outputDate{font-size:13px;color:#dbe7df}@media(max-width:650px){.shell{margin:0;padding:0}.mast,.panel,.buttons{border-radius:0;padding:22px 18px}.grid,.action-grid,.signatures{grid-template-columns:1fr}.action-grid .full{grid-column:auto}.mast h1{font-size:24px}}@page{size:A4;margin:13mm}@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;font-size:11px}.shell{margin:0;max-width:none;padding:0}.mast{border-radius:0;padding:15px 19px;background:#163d35!important}.mast h1{font-size:21px}.panel{padding:12px 19px;border:0}.section{padding:13px 0 3px;break-inside:avoid}.section h2{font-size:14px;margin-bottom:8px}.question{padding:6px 0}.question-title{font-size:11px;margin-bottom:3px}.options{gap:15px}.options label{font-size:11px}.options input{width:13px;height:13px}.grid{gap:9px}.field label,.comment label{font-size:11px}input[type=text],input[type=date],textarea,select{border:1px solid #c2ccc5;padding:5px 7px;border-radius:3px;font-size:11px;min-height:0}textarea{height:auto;min-height:35px;resize:none}.comment{margin:8px 0}.actions{gap:6px}.action-item{padding:8px;break-inside:avoid}.action-grid{gap:7px}.action-item h3{font-size:11px}.buttons,.no-print,.notice,.status{display:none!important}.signatures{margin-top:20px}.print-only{display:block}.page-break{break-before:page}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="mast"><div class="eyebrow">Coccinelle Day Nursery</div><h1>Staff Supervision Record</h1><p>Routine / extended / additional support meeting</p></header>
+  <form id="form" class="panel" autocomplete="off">
+    <div class="grid">
+      <div class="field"><label for="practitioner">Practitioner *</label><input id="practitioner" name="practitioner" type="text" required></div>
+      <div class="field"><label for="supervisor">Supervisor *</label><input id="supervisor" name="supervisor" type="text" required></div>
+      <div class="field"><label for="meetingDate">Date of supervision *</label><input id="meetingDate" name="meetingDate" type="date" required></div>
+      <div class="field"><label for="meetingType">Meeting type</label><select id="meetingType"><option>Routine</option><option>Extended review</option><option>Additional support</option></select></div>
+      <div class="field"><label for="period">Period covered (optional)</label><input id="period" type="text" placeholder="e.g. September–November 2026"></div>
+      <div class="field"><label for="nextDate">Next supervision date</label><input id="nextDate" type="date"></div>
+    </div>
+    <div class="notice no-print">This form runs in your browser. It does not upload or email answers, and it does not automatically save drafts. Print or save the PDF to approved secure nursery storage. Do not enter confidential safeguarding case details here.</div>
+    <div id="sections"></div>
+    <section class="section"><h2>7. Actions and follow-up</h2><div class="question"><span class="question-title">Have previous supervision actions been reviewed?</span><div class="options" role="group" aria-label="Previous actions reviewed"><label><input type="radio" name="previousReviewed" value="Yes"> Yes</label><label><input type="radio" name="previousReviewed" value="No"> No</label><label><input type="radio" name="previousReviewed" value="N/A"> N/A</label></div></div><div class="comment"><label for="previousComments">Progress on previous actions / outstanding items</label><textarea id="previousComments" rows="2"></textarea></div><div class="actions" id="actionItems"></div><div class="comment"><label for="otherConcerns">Other comments / matters for follow-up</label><textarea id="otherConcerns" rows="2"></textarea></div><div class="comment"><label for="staffComments">Practitioner's comments</label><textarea id="staffComments" rows="2"></textarea></div><div class="signatures"><div class="sig">Practitioner signature / acknowledgement</div><div class="sig">Supervisor signature / acknowledgement</div></div><p class="muted small">The signatures above may be added to a printed copy, or acknowledgement recorded through the nursery's authorised process.</p></section>
+  </form>
+  <div class="buttons no-print"><button id="saveBtn" type="button">Save as PDF / Print</button><button id="clearBtn" class="secondary" type="button">Clear form</button><div id="status" class="status" role="status" aria-live="polite"></div></div>
+</main>
+<script>
+'use strict';
+const sections=[
+ {title:'1. Staff wellbeing',questions:['Do you feel supported in your role?','Is your workload manageable?','Do you have the resources needed to perform your role?']},
+ {title:'2. Safeguarding and welfare',questions:['Are you confident in the safeguarding reporting procedures?','Have any new safeguarding concerns arisen since your last supervision?','Are any safeguarding training updates required?']},
+ {title:'3. Children and development',questions:['Are your key children making expected progress?','Are any children requiring additional support?','Are you confident in supporting children with SEND?']},
+ {title:'4. Quality of practice',questions:['Are you confident implementing the nursery curriculum?','Are you using effective communication and interaction strategies?','Would additional coaching or support improve your practice?']},
+ {title:'5. Health and safety',questions:['Have any accidents, incidents or near misses raised concerns?','Are you confident following relevant safety and welfare procedures?']},
+ {title:'6. Professional development',questions:['Have you completed any training since your last supervision?','Do you have any further training or development needs?']}
+];
+const container=document.getElementById('sections');
+sections.forEach((section,s)=>{
+ const el=document.createElement('section');el.className='section';
+ const title=document.createElement('h2');title.textContent=section.title;el.append(title);
+ section.questions.forEach((question,i)=>{
+  const q=document.createElement('div');q.className='question';
+  const questionTitle=document.createElement('span');questionTitle.className='question-title';questionTitle.textContent=question;q.append(questionTitle);
+  const opts=document.createElement('div');opts.className='options';opts.setAttribute('role','group');opts.setAttribute('aria-label',question);
+  ['Yes','No','N/A'].forEach(value=>{const label=document.createElement('label');const input=document.createElement('input');input.type='radio';input.name=`q${s}_${i}`;input.value=value;label.append(input,document.createTextNode(' '+value));opts.append(label)});
+  q.append(opts);el.append(q);
+ });
+ const comment=document.createElement('div');comment.className='comment';const label=document.createElement('label');label.htmlFor=`comment${s}`;label.textContent='Comments / concerns / evidence (brief notes)';const textarea=document.createElement('textarea');textarea.id=`comment${s}`;textarea.rows=2;comment.append(label,textarea);el.append(comment);container.append(el);
+});
+const actionItems=document.getElementById('actionItems');
+for(let i=1;i<=3;i++){
+ const row=document.createElement('div');row.className='action-item';
+ row.innerHTML=`<h3>Action ${i}</h3><div class="action-grid"><div class="field full"><label for="action${i}">Agreed action</label><textarea id="action${i}" rows="2"></textarea></div><div class="field"><label for="owner${i}">Responsible person</label><input id="owner${i}" type="text"></div><div class="field"><label for="due${i}">Due date</label><input id="due${i}" type="date"></div><div class="field full"><label for="success${i}">Success measure</label><input id="success${i}" type="text"></div></div>`;
+ actionItems.append(row);
+}
+document.getElementById('saveBtn').addEventListener('click',()=>{
+ const form=document.getElementById('form');const status=document.getElementById('status');
+ if(!form.reportValidity()){status.textContent='Please complete practitioner, supervisor and supervision date.';return}
+ const missing=[];sections.forEach((sec,s)=>sec.questions.forEach((q,i)=>{if(!document.querySelector(`input[name="q${s}_${i}"]:checked`))missing.push(q)}));
+ if(!document.querySelector('input[name="previousReviewed"]:checked'))missing.push('Previous actions reviewed');
+ if(missing.length && !confirm(`${missing.length} checklist answer(s) are blank. Continue to PDF/print anyway?`)){status.textContent='Complete unanswered items or continue when ready.';return}
+ status.textContent='In the print window, choose “Save as PDF” as the destination.';
+ window.print();
+});
+document.getElementById('clearBtn').addEventListener('click',()=>{
+ if(!confirm('Clear all entries? Any unsaved answers will be lost.'))return;
+ document.getElementById('form').reset();document.getElementById('status').textContent='Form cleared.';
+});
+</script>
+</body>
+</html>
